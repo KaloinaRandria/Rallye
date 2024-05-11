@@ -16,5 +16,7 @@ int main() {
 
     connection *con = conn.getConnection();
 
+    cout << con << endl;
+
     return 0;
 }

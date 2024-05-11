@@ -10,7 +10,7 @@ using namespace pqxx;
 class Connection
 {
 private:
-    connection *connect;
+    connection *conn;
 public:
     Connection(string dbname , string user , string password , string hostaddr , string port);
     ~Connection();

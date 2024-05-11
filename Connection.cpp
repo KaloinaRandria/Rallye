@@ -4,8 +4,8 @@ Connection::Connection(string dbname , string user , string password , string ho
     try
     {
         string conn_string = "dbname=" + dbname + " user=" + user + " password=" + password + " hostaddr=" + hostaddr + " port=" + port;
-        connect = new connection(conn_string);
-        if (connect->is_open()) {
+        conn = new connection(conn_string);
+        if (conn->is_open()) {
             cout << "Database Connection Succesfull !" << endl;
         } else {
             cout << "Error connecting to database" << endl;
@@ -19,10 +19,10 @@ Connection::Connection(string dbname , string user , string password , string ho
 }
 
 Connection::~Connection(){
-    connect->close();
-    delete connect;
+    conn->close();
+    delete conn;
 }
 
 connection *Connection::getConnection() {
-    return connect;
+    return conn;
 }
