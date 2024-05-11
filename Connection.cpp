@@ -17,3 +17,12 @@ Connection::Connection(string dbname , string user , string password , string ho
     }
         
 }
+
+Connection::~Connection(){
+    connect->close();
+    delete connect;
+}
+
+connection *Connection::getConnection() {
+    return connect;
+}
